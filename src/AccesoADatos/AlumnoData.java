@@ -158,7 +158,7 @@ public class AlumnoData {
                     alumnos.add(alu);
                 }    
             }else {
-                JOptionPane.showMessageDialog(null, "No existe alumnos activos");
+                JOptionPane.showMessageDialog(null, "No existen alumnos activos");
             }
             ps.close();
         } catch (SQLException ex) {
