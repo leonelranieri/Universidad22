@@ -216,16 +216,18 @@ public class InscripcionData {
             Alumno alumno = new Alumno();
             
             while (result.next()) {
-                alumno.setIdAlumno(result.getInt("alumno.idAlumno"));
+                alumno.setIdAlumno(result.getInt("idAlumno"));
                 alumno.setDni(result.getInt("dni"));
                 alumno.setApellido(result.getString("apellido"));
-                alumno.setNombre(result.getString("alumno.nombre"));
+                alumno.setNombre(result.getString("nombre"));
+                alumnos.add(alumno);
             }
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion." + ex.getMessage());
         }
-
+        System.out.println("Retorno lista");
+        System.out.println(alumnos.toString());
         return alumnos;
     }
 }
