@@ -63,23 +63,21 @@ public class Universidad22 {
         Materia materiaModificada=new Materia(4, "taller de francés", 2023, true);
         materiaData.modificarMateria(materiaModificada);
         
-        materiaData.eliminarMateria(2);s
+        materiaData.eliminarMateria(2);
 
-        
         List<Materia> materiasActivas=materiaData.listarMaterias();
         for(Materia materia: materiasActivas){
             JOptionPane.showMessageDialog(null, materia.toString());
         }*/
         
         InscripcionData inscData=new InscripcionData();
-        
-        /*Inscripcion insc_1=new Inscripcion(alumno, materia, 9);
+        /*
+        Inscripcion insc_1=new Inscripcion(alumno, materia, 9);
         Inscripcion insc_2=new Inscripcion(2, alumno1, materia2, 10);
-        Inscripcion insc_3=new Inscripcion(2, alumno1, materia3, 8);
         
         inscData.guardarInscripcion(insc_1);
         inscData.guardarInscripcion(insc_2);
-        
+        /*
         List<Inscripcion> inscripciones=inscData.obtenerInscripciones();
         for(Inscripcion inscripcion: inscripciones){
             JOptionPane.showMessageDialog(null, inscripcion.toString());
@@ -102,15 +100,13 @@ public class Universidad22 {
         
         inscData.borrarInscripcionMateriaAlumno(2, 4);*/
         
-        List<Alumno> alumnosPorMateria=inscData.obtenerAlumnosPorMateria(1);
-        for(Alumno a: alumnosPorMateria){
+        //inscData.actualizarNota(1, 4, 9);
+        
+                
+        List<Alumno> alumnoporMateria=inscData.obtenerAlumnosPorMateria(4);
+        for(Alumno a: alumnoporMateria){
             JOptionPane.showMessageDialog(null, a.toString());
         }
-        
-        
-        
-        
     }
     
-   
 }
