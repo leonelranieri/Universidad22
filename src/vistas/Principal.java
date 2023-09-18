@@ -1,6 +1,7 @@
 
 package vistas;
 
+import Vistas.Alumnos;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -143,7 +144,11 @@ public class Principal extends javax.swing.JFrame {
         jDescritorio.repaint();
         Alumnos alumnos = new Alumnos();
         alumnos.setVisible(true);
-        jDescritorio.add(alumnos);
+        try{
+            jDescritorio.add(alumnos);
+        }catch (RuntimeException ex){
+            return;
+        }
         jDescritorio.moveToFront(alumnos);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
