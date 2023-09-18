@@ -51,7 +51,7 @@ public class AlumnoData {
     public void modificarAlumno(Alumno alu){
         String sql="UPDATE alumno "
         + "SET dni=?,apellido=?,"
-        + "nombre=?,fechaNacimiento=? WHERE idAlumno=?";
+        + "nombre=?,fechaNacimiento=?, estado=? WHERE idAlumno=?";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
@@ -59,7 +59,8 @@ public class AlumnoData {
             ps.setString(2, alu.getApellido());
             ps.setString(3, alu.getNombre());
             ps.setDate(4, Date.valueOf(alu.getFechaNac()));
-            ps.setInt(5, alu.getIdAlumno());
+            ps.setBoolean(5, alu.isActivo());
+            ps.setInt(6, alu.getIdAlumno());
             int exito=ps.executeUpdate();
             if(exito == 1){
                 JOptionPane.showMessageDialog(null, "Alumno modificado");
@@ -131,7 +132,7 @@ public class AlumnoData {
                 alu.setFechaNac(result.getDate("fechaNacimiento").toLocalDate());
                 alu.setActivo(true);
             }else{
-                JOptionPane.showMessageDialog(null, "No existe el alumno con id : "+dni);
+                JOptionPane.showMessageDialog(null, "No existe el alumno con DNI: "+dni);
             }
             ps.close();
         } catch (SQLException ex) {

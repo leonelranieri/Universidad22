@@ -24,6 +24,8 @@ public class Alumnos extends javax.swing.JFrame {
      */
     public Alumnos() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -215,6 +217,7 @@ public class Alumnos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        jBnuevo.setEnabled(false);
         try{
             int dni = Integer.parseInt(jTdocumento.getText());
             AlumnoData ad = new AlumnoData();
@@ -226,16 +229,21 @@ public class Alumnos extends javax.swing.JFrame {
             jRadioEstado.setSelected(al.isActivo());
         }catch(NullPointerException ex){
             JOptionPane.showMessageDialog(this, "Ingrese un DNI válido");
+            jBnuevo.setEnabled(true);
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Error en el campo DNI. Ingrese solo numeros");
         }
     }//GEN-LAST:event_jBbuscarActionPerformed
 
-    private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
+    private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed        
         if (jTnombre.getText().isEmpty() || jTapellido.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No deje campos en blanco");
                 return;
             }
+        if(! jRadioEstado.isSelected()){
+            JOptionPane.showMessageDialog(this, "Si agrega un alumno debe ser con el estado activo");
+            return;
+        }
         try {
             int dni = Integer.parseInt(jTdocumento.getText());
             String nombre = jTnombre.getText();
@@ -249,15 +257,19 @@ public class Alumnos extends javax.swing.JFrame {
                 Alumno alumno = new Alumno(dni, apellido, nombre, fechald, activo);
                 ad.guardarAlumno(alumno);
 
+            }else{
+                JOptionPane.showMessageDialog(this, "Seleccione la fecha de nacimiento");
+                return;
             }
         } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Error! " + ex.toString());
+            JOptionPane.showMessageDialog(this, "Error en el campo DNI. Ingrese solo numeros");
+            jTdocumento.setText("");
+            return;
         }
         limpiar();
     }//GEN-LAST:event_jBnuevoActionPerformed
 
-    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
-        
+    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed           
         try{
             int dni = Integer.parseInt(jTdocumento.getText());
             AlumnoData ad = new AlumnoData();
@@ -271,39 +283,58 @@ public class Alumnos extends javax.swing.JFrame {
             ad.eliminarAlumno(id);
         }catch(NullPointerException ex){
             JOptionPane.showMessageDialog(this, "Ingrese un DNI válido");
+            return;
         }
         limpiar();
     }//GEN-LAST:event_jBeliminarActionPerformed
 
     private void jBguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarActionPerformed
-        try{
+         int respuesta = -1;
+
+        if (jTnombre.getText().isEmpty() || jTapellido.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No deje campos en blanco");
+            return;
+        }
+
+        if (!jRadioEstado.isSelected()) {
+            respuesta = JOptionPane.showConfirmDialog(null, "Esta por dar de baja un alumno/a, ¿está seguro?",
+                    null, JOptionPane.YES_NO_CANCEL_OPTION);
+
+            if (respuesta == JOptionPane.NO_OPTION || respuesta == JOptionPane.CANCEL_OPTION) {
+                jRadioEstado.setSelected(true);
+                return; // Si el usuario elige "No" o "Cancelar", simplemente retorna sin hacer nada.
+            }
+        }
+
+        if (jDfecha.getDate() == null) {
+            JOptionPane.showMessageDialog(this, "Dejó el campo 'Fecha de Nacimiento' en blanco");
+            return;
+        }
+
+        try {
             int dni = Integer.parseInt(jTdocumento.getText());
-            String nombre = jTnombre.getText();
-            String apellido = jTapellido.getText();
-            boolean activo = jRadioEstado.isSelected();
-            LocalDate fechald;
+            AlumnoData ad = new AlumnoData();
+            Alumno al = ad.buscarAlumnoPorDni(dni);
+            al.setNombre(jTnombre.getText());
+            al.setApellido(jTapellido.getText());
+            al.setDni(dni);
+            al.setActivo(jRadioEstado.isSelected());
+            al.setFechaNac(jDfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 
-            if (jTnombre.getText().isEmpty() || jTapellido.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(this, "No deje campos en blanco");
-                return;
+            // Verifica si el usuario eligió dar de baja al alumno
+            if (respuesta == JOptionPane.YES_OPTION) {
+                al.setActivo(false); // Establece el estado del alumno como inactivo
             }
 
-            if (jDfecha.getDate() != null) {
-                fechald = jDfecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-                //fechald
-                AlumnoData ad = new AlumnoData();
-                Alumno al = new Alumno(dni, apellido, nombre, fechald, activo);
-                ad.modificarAlumno(al);
-            }
-        }catch (NumberFormatException ex){
-            JOptionPane.showMessageDialog(null, "Error en el campo DNI. Ingrese solo numeros");
+            ad.modificarAlumno(al);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Error en el campo DNI. Ingrese solo números");
         }
         limpiar();
     }//GEN-LAST:event_jBguardarActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
-
+        this.dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
 
    
