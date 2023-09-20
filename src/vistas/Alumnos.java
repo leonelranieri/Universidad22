@@ -225,6 +225,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
             jRadioEstado.setSelected(al.isActivo());
         }catch(NullPointerException ex){
             JOptionPane.showMessageDialog(this, "Ingrese un DNI válido");
+            limpiar();
             jBnuevo.setEnabled(true);
         }catch (NumberFormatException ex){
             JOptionPane.showMessageDialog(null, "Error en el campo DNI. Ingrese solo numeros");
@@ -237,7 +238,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
                 return;
             }
         if(! jRadioEstado.isSelected()){
-            JOptionPane.showMessageDialog(this, "Si agrega un alumno debe ser con el estado activo");
+            JOptionPane.showMessageDialog(this, "Si agrega un/a alumno/a debe ser con el estado activo");
             return;
         }
         try {
@@ -293,7 +294,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
         }
 
         if (!jRadioEstado.isSelected()) {
-            respuesta = JOptionPane.showConfirmDialog(null, "Esta por dar de baja un alumno/a, ¿está seguro?",
+            respuesta = JOptionPane.showConfirmDialog(null, "Esta por dar de baja un/a alumno/a, ¿está seguro?",
                     null, JOptionPane.YES_NO_CANCEL_OPTION);
 
             if (respuesta == JOptionPane.NO_OPTION || respuesta == JOptionPane.CANCEL_OPTION) {

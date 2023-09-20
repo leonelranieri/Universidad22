@@ -97,15 +97,13 @@ public class AlumnoData {
             ps.setInt(1, id);
             ResultSet result=ps.executeQuery();
             if(result.next()){
-                alu=new Alumno();
+                alu = new Alumno();
                 alu.setIdAlumno(id);
                 alu.setDni(result.getInt("dni"));
                 alu.setApellido(result.getString("apellido"));
                 alu.setNombre(result.getString("nombre"));
                 alu.setFechaNac(result.getDate("fechaNacimiento").toLocalDate());
-                alu.setActivo(true);
-            }else{
-                JOptionPane.showMessageDialog(null, "No existe el alumno con id : "+id);
+                alu.setActivo(true);   
             }
             ps.close();
         } catch (SQLException ex) {
@@ -124,15 +122,13 @@ public class AlumnoData {
             ps.setInt(1, dni);
             ResultSet result=ps.executeQuery();
             if(result.next()){
-                alu=new Alumno();
+                alu = new Alumno();
                 alu.setIdAlumno(result.getInt("idAlumno"));
                 alu.setDni(result.getInt("dni"));
                 alu.setApellido(result.getString("apellido"));
                 alu.setNombre(result.getString("nombre"));
                 alu.setFechaNac(result.getDate("fechaNacimiento").toLocalDate());
                 alu.setActivo(true);
-            }else{
-                JOptionPane.showMessageDialog(null, "No existe el alumno con DNI: "+dni);
             }
             ps.close();
         } catch (SQLException ex) {
