@@ -164,7 +164,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-
+        jDescritorio.removeAll(); 
+        jDescritorio.repaint();
+        Inscripciones inscri = new Inscripciones();
+        inscri.setVisible(true);
+        jDescritorio.add(inscri);
+        jDescritorio.moveToFront(inscri);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
