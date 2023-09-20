@@ -59,8 +59,6 @@ public class MateriaData {
                 mat.setNombre(result.getString("nombre"));
                 mat.setAño(result.getInt("año"));
                 mat.setEstado(true);
-            }else{
-                JOptionPane.showMessageDialog(null, "No existe la materia con id : "+id);
             }
             ps.close();
         } catch (SQLException ex) {
