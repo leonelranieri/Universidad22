@@ -141,7 +141,7 @@ public class InscripcionData {
     public List<Materia> obtenerMateriasNoCursadas(int id){
         List<Materia> materias=new ArrayList<Materia>();
         String sql="SELECT * FROM materia "
-                + "WHERE idMateria!=(SELECT idMateria FROM inscripcion WHERE idAlumno=2) AND estado=1";
+                + "WHERE idMateria NOT IN (SELECT idMateria FROM inscripcion WHERE idAlumno=?) AND estado=1";
         
         try {
             PreparedStatement ps=con.prepareStatement(sql);
@@ -226,8 +226,8 @@ public class InscripcionData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion." + ex.getMessage());
         }
-        System.out.println("Retorno lista");
-        System.out.println(alumnos.toString());
+//        System.out.println("Retorno lista");
+//        System.out.println(alumnos.toString());
         return alumnos;
     }
 }
