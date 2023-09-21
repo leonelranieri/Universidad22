@@ -4,6 +4,7 @@ package vistas;
 import AccesoADatos.AlumnoData;
 import AccesoADatos.InscripcionData;
 import Entidades.Alumno;
+import Entidades.Inscripcion;
 import Entidades.Materia;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -34,8 +35,8 @@ public class Inscripciones extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jBinscribir = new javax.swing.JButton();
-        jBanular = new javax.swing.JButton();
+        jBInscribir = new javax.swing.JButton();
+        jBAnular = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jCAlumnos = new javax.swing.JComboBox<String>();
@@ -54,14 +55,19 @@ public class Inscripciones extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Seleccione un alumno:");
 
-        jBinscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion.png"))); // NOI18N
-        jBinscribir.setText("Inscribir");
-
-        jBanular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/navegador.png"))); // NOI18N
-        jBanular.setText("Anular");
-        jBanular.addActionListener(new java.awt.event.ActionListener() {
+        jBInscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion.png"))); // NOI18N
+        jBInscribir.setText("Inscribir");
+        jBInscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBanularActionPerformed(evt);
+                jBInscribirActionPerformed(evt);
+            }
+        });
+
+        jBAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/navegador.png"))); // NOI18N
+        jBAnular.setText("Anular");
+        jBAnular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAnularActionPerformed(evt);
             }
         });
 
@@ -119,9 +125,9 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBinscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jBInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(31, 31, 31)
-                                .addComponent(jBanular)
+                                .addComponent(jBAnular)
                                 .addGap(35, 35, 35)
                                 .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
@@ -135,11 +141,11 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                                         .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jRInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(38, 38, 38)
                                 .addComponent(jRNoInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(22, 22, 22)))))
                 .addContainerGap(59, Short.MAX_VALUE))
@@ -163,12 +169,12 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRInscriptas)
                     .addComponent(jRNoInscriptas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBinscribir)
-                    .addComponent(jBanular, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBInscribir)
+                    .addComponent(jBAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
@@ -176,12 +182,32 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBanularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanularActionPerformed
-      
-    }//GEN-LAST:event_jBanularActionPerformed
+    private void jBAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAnularActionPerformed
+        AlumnoData ad=new AlumnoData();
+        InscripcionData idata=new InscripcionData();
+        int id=0;
+        int filaSelecionada = jTtabla.getSelectedRow();
+        Object aluSeleccionado = jCAlumnos.getSelectedItem();
+        for (Alumno alu : ad.listarAlumnos()) {
+                if (alu.toString().equals(aluSeleccionado)) {
+                    aluSeleccionado=alu;
+                    id=alu.getIdAlumno();
+                }
+            }
+        try {
+            if (filaSelecionada != -1) {
+                int idMateria = (int) jTtabla.getValueAt(filaSelecionada, 0);
+                int idAlumno = id;
+                idata.borrarInscripcionMateriaAlumno(idAlumno, idMateria);
+                limpiarTabla();
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Seleccione una fila");
+        }
+    }//GEN-LAST:event_jBAnularActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
-
+     this.dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
 
     private void jRInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRInscriptasActionPerformed
@@ -226,9 +252,40 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jRNoInscriptasActionPerformed
 
+    private void jBInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInscribirActionPerformed
+        AlumnoData ad=new AlumnoData();
+        Alumno aluSeleccionado=new Alumno();
+        if(noInscriptas){
+            int filaSelecionada = jTtabla.getSelectedRow();
+            Object alumnoItem = jCAlumnos.getSelectedItem();
+            int nota = 0;
+             for (Alumno alu : ad.listarAlumnos()) {
+                if (alu.toString().equals(alumnoItem)) {
+                    aluSeleccionado=alu; 
+                }
+            }
+            try {
+                if (filaSelecionada != -1) {
+                    int idMateria = (Integer) jTtabla.getValueAt(filaSelecionada, 0);
+                    String nombre = (String)jTtabla.getValueAt(filaSelecionada, 1);
+                    int año = (int) jTtabla.getValueAt(filaSelecionada, 2);
+                    Materia materiaSeleccionada = new Materia(idMateria, nombre, año, true);
+                    InscripcionData id=new InscripcionData();
+                    Inscripcion nuevaInsc=new Inscripcion(aluSeleccionado, materiaSeleccionada, nota);
+                    id.guardarInscripcion(nuevaInsc);
+                    limpiarTabla();
+                }
+            }catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Seleccione una materia");
+            }catch(ClassCastException ex){
+                return;
+            }
+        }
+    }//GEN-LAST:event_jBInscribirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBanular;
-    private javax.swing.JButton jBinscribir;
+    private javax.swing.JButton jBAnular;
+    private javax.swing.JButton jBInscribir;
     private javax.swing.JButton jBsalir;
     private javax.swing.JComboBox<String> jCAlumnos;
     private javax.swing.JLabel jLabel1;
