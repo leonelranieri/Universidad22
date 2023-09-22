@@ -181,6 +181,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
 
+        jDescritorio.removeAll();
+        jDescritorio.repaint();
+        CargaNotas carga = new CargaNotas();
+        carga.setVisible(true);
+        jDescritorio.add(carga);
+        jDescritorio.moveToFront(carga);
+
+
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMsalirActionPerformed
