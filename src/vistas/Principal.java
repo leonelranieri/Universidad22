@@ -160,19 +160,34 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        jDescritorio.removeAll();
+          jDescritorio.removeAll();
         jDescritorio.repaint();
         Inscripciones insc = new Inscripciones();
         insc.setVisible(true);
         jDescritorio.add(insc);
         jDescritorio.moveToFront(insc);
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        jDescritorio.removeAll();
+        jDescritorio.repaint();
+        AlumnosXMateria consultaAlumno = new AlumnosXMateria();
+        consultaAlumno.setVisible(true);
+        jDescritorio.add(consultaAlumno);
+        jDescritorio.moveToFront(consultaAlumno);
+
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+
+        jDescritorio.removeAll();
+        jDescritorio.repaint();
+        CargaNotas carga = new CargaNotas();
+        carga.setVisible(true);
+        jDescritorio.add(carga);
+        jDescritorio.moveToFront(carga);
+
 
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
