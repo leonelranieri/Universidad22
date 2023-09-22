@@ -138,13 +138,14 @@ public class CargaNotas extends javax.swing.JInternalFrame {
         cargarCombo();
         limpiarTabla();
         
+        
     }
      
-       private DefaultTableModel modeloTabla=new DefaultTableModel(){
-      public boolean isCellEditable(int r, int c){
+       private DefaultTableModel modeloTabla=new DefaultTableModel();//{
+     /* public boolean isCellEditable(int r, int c){
           return false;
       }  
-    };
+    };*/
     
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
     this.dispose();
