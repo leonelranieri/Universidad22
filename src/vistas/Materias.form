@@ -5,6 +5,9 @@
     <Property name="closable" type="boolean" value="true"/>
     <Property name="iconifiable" type="boolean" value="true"/>
     <Property name="maximizable" type="boolean" value="true"/>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Cursor de Texto"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -145,6 +148,9 @@
           <Image iconType="3" name="/iconos/ayuda.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBuscarActionPerformed"/>
@@ -156,6 +162,9 @@
           <Image iconType="3" name="/iconos/agregar-archivo.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBNuevoActionPerformed"/>
@@ -167,6 +176,9 @@
           <Image iconType="3" name="/iconos/eliminar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEliminarActionPerformed"/>
@@ -178,6 +190,9 @@
           <Image iconType="3" name="/iconos/guardar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBGuardarActionPerformed"/>
@@ -189,6 +204,9 @@
           <Image iconType="3" name="/iconos/cerrar-sesion.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSalirActionPerformed"/>
@@ -197,13 +215,31 @@
     <Component class="javax.swing.JRadioButton" name="jRadioEstado">
       <Properties>
         <Property name="text" type="java.lang.String" value="Tildar para activo"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTId">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Texto"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTNombre">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Texto"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTA&#xf1;o">
+      <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Texto"/>
+        </Property>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTA&#xf1;oActionPerformed"/>
       </Events>
