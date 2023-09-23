@@ -30,157 +30,177 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+   private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jBInscribir = new javax.swing.JButton();
-        jBAnular = new javax.swing.JButton();
-        jBsalir = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jCAlumnos = new javax.swing.JComboBox<String>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTtabla = new javax.swing.JTable();
-        jRInscriptas = new javax.swing.JRadioButton();
-        jRNoInscriptas = new javax.swing.JRadioButton();
+      jLabel1 = new javax.swing.JLabel();
+      jLabel2 = new javax.swing.JLabel();
+      jBInscribir = new javax.swing.JButton();
+      jBAnular = new javax.swing.JButton();
+      jBsalir = new javax.swing.JButton();
+      jLabel6 = new javax.swing.JLabel();
+      jCAlumnos = new javax.swing.JComboBox<>();
+      jScrollPane1 = new javax.swing.JScrollPane();
+      jTtabla = new javax.swing.JTable();
+      jRInscriptas = new javax.swing.JRadioButton();
+      jRNoInscriptas = new javax.swing.JRadioButton();
 
-        setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
+      setClosable(true);
+      setIconifiable(true);
+      setMaximizable(true);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/documento.png"))); // NOI18N
-        jLabel1.setText("Inscripciones");
+      jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+      jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Inscripciones.png"))); // NOI18N
+      jLabel1.setText("Inscripciones");
 
-        jLabel2.setText("Seleccione un alumno:");
+      jLabel2.setText("Seleccione un alumno:");
 
-        jBInscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion.png"))); // NOI18N
-        jBInscribir.setText("Inscribir");
-        jBInscribir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBInscribirActionPerformed(evt);
-            }
-        });
+      jBInscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion_24.png"))); // NOI18N
+      jBInscribir.setText("Inscribir");
+      jBInscribir.setContentAreaFilled(false);
+      jBInscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jBInscribir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+      jBInscribir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion_24.png"))); // NOI18N
+      jBInscribir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/inscripcion_32.png"))); // NOI18N
+      jBInscribir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+      jBInscribir.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jBInscribirActionPerformed(evt);
+         }
+      });
 
-        jBAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/navegador.png"))); // NOI18N
-        jBAnular.setText("Anular");
-        jBAnular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAnularActionPerformed(evt);
-            }
-        });
+      jBAnular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/anular_ 24.png"))); // NOI18N
+      jBAnular.setText("Anular");
+      jBAnular.setContentAreaFilled(false);
+      jBAnular.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jBAnular.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+      jBAnular.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/anular_ 24.png"))); // NOI18N
+      jBAnular.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/anular_32.png"))); // NOI18N
+      jBAnular.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+      jBAnular.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jBAnularActionPerformed(evt);
+         }
+      });
 
-        jBsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/cerrar-sesion.png"))); // NOI18N
-        jBsalir.setText("Salir");
-        jBsalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsalirActionPerformed(evt);
-            }
-        });
+      jBsalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/salir_24.png"))); // NOI18N
+      jBsalir.setText("Salir");
+      jBsalir.setContentAreaFilled(false);
+      jBsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jBsalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+      jBsalir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/salir_24.png"))); // NOI18N
+      jBsalir.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/salir_32.png"))); // NOI18N
+      jBsalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+      jBsalir.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jBsalirActionPerformed(evt);
+         }
+      });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("Listado de Materias");
+      jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+      jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/ListaMaterias.png"))); // NOI18N
+      jLabel6.setText("Listado de Materias");
 
-        jCAlumnos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCAlumnosActionPerformed(evt);
-            }
-        });
+      jCAlumnos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jCAlumnos.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jCAlumnosActionPerformed(evt);
+         }
+      });
 
-        jTtabla.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTtabla);
+      jTtabla.setModel(new javax.swing.table.DefaultTableModel(
+         new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+         },
+         new String [] {
+            "Title 1", "Title 2", "Title 3", "Title 4"
+         }
+      ));
+      jScrollPane1.setViewportView(jTtabla);
 
-        jRInscriptas.setText("Materias inscriptas");
-        jRInscriptas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRInscriptasActionPerformed(evt);
-            }
-        });
+      jRInscriptas.setText("Materias inscriptas");
+      jRInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jRInscriptas.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jRInscriptasActionPerformed(evt);
+         }
+      });
 
-        jRNoInscriptas.setText("Materias no inscriptas");
-        jRNoInscriptas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRNoInscriptasActionPerformed(evt);
-            }
-        });
+      jRNoInscriptas.setText("Materias no inscriptas");
+      jRNoInscriptas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+      jRNoInscriptas.addActionListener(new java.awt.event.ActionListener() {
+         public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jRNoInscriptasActionPerformed(evt);
+         }
+      });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jBInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(jBAnular)
-                                .addGap(35, 35, 35)
-                                .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jRInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jRNoInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(22, 22, 22)))))
-                .addContainerGap(59, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(169, 169, 169))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRInscriptas)
-                    .addComponent(jRNoInscriptas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBInscribir)
-                    .addComponent(jBAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29))
-        );
+      javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+      getContentPane().setLayout(layout);
+      layout.setHorizontalGroup(
+         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+               .addGroup(layout.createSequentialGroup()
+                  .addGap(25, 25, 25)
+                  .addComponent(jLabel2)
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                     .addComponent(jCAlumnos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+               .addGroup(layout.createSequentialGroup()
+                  .addGap(68, 68, 68)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jBInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBAnular, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                           .addComponent(jRInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                           .addGap(38, 38, 38)
+                           .addComponent(jRNoInscriptas, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                           .addGap(22, 22, 22))))))
+            .addContainerGap(59, Short.MAX_VALUE))
+         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel6)
+            .addGap(149, 149, 149))
+      );
+      layout.setVerticalGroup(
+         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+         .addGroup(layout.createSequentialGroup()
+            .addGap(13, 13, 13)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+               .addComponent(jCAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+               .addComponent(jLabel2))
+            .addGap(12, 12, 12)
+            .addComponent(jLabel6)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+               .addComponent(jRInscriptas)
+               .addComponent(jRNoInscriptas))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+               .addComponent(jBInscribir)
+               .addComponent(jBAnular)
+               .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(29, 29, 29))
+      );
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+      pack();
+   }// </editor-fold>//GEN-END:initComponents
 
     private void jBAnularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAnularActionPerformed
         AlumnoData ad=new AlumnoData();
@@ -283,19 +303,19 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jBInscribirActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAnular;
-    private javax.swing.JButton jBInscribir;
-    private javax.swing.JButton jBsalir;
-    private javax.swing.JComboBox<String> jCAlumnos;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JRadioButton jRInscriptas;
-    private javax.swing.JRadioButton jRNoInscriptas;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTtabla;
-    // End of variables declaration//GEN-END:variables
+   // Variables declaration - do not modify//GEN-BEGIN:variables
+   private javax.swing.JButton jBAnular;
+   private javax.swing.JButton jBInscribir;
+   private javax.swing.JButton jBsalir;
+   private javax.swing.JComboBox<String> jCAlumnos;
+   private javax.swing.JLabel jLabel1;
+   private javax.swing.JLabel jLabel2;
+   private javax.swing.JLabel jLabel6;
+   private javax.swing.JRadioButton jRInscriptas;
+   private javax.swing.JRadioButton jRNoInscriptas;
+   private javax.swing.JScrollPane jScrollPane1;
+   private javax.swing.JTable jTtabla;
+   // End of variables declaration//GEN-END:variables
 
     // MÉTODO PARA CARGAR LOS ALUMNOS AL JRADIOBUTTON
     private void cargarCombo(){
