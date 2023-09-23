@@ -213,9 +213,8 @@ public class InscripcionData {
 
             ResultSet result = ps.executeQuery();
 
-            Alumno alumno = new Alumno();
-            
             while (result.next()) {
+                Alumno alumno = new Alumno();
                 alumno.setIdAlumno(result.getInt("idAlumno"));
                 alumno.setDni(result.getInt("dni"));
                 alumno.setApellido(result.getString("apellido"));
@@ -226,8 +225,6 @@ public class InscripcionData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion." + ex.getMessage());
         }
-//        System.out.println("Retorno lista");
-//        System.out.println(alumnos.toString());
         return alumnos;
     }
 }

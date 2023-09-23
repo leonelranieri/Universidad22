@@ -4,6 +4,8 @@ package vistas;
 import Vistas.Alumnos;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame {
     
@@ -251,4 +253,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMmateria;
     private javax.swing.JMenu jMsalir;
     // End of variables declaration//GEN-END:variables
+
+    public static void limpiarTabla(JTable jTabla, DefaultTableModel modeloTabla) {
+        int f = jTabla.getRowCount() - 1;
+        for (; f >= 0; f--) {
+            modeloTabla.removeRow(f);
+        }
+    }
+
 }

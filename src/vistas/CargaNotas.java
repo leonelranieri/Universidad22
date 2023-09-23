@@ -7,6 +7,7 @@ import Entidades.Alumno;
 import Entidades.Inscripcion;
 import Entidades.Materia;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class CargaNotas extends javax.swing.JInternalFrame {
@@ -19,7 +20,7 @@ public class CargaNotas extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jBsalir = new javax.swing.JButton();
-        jCAlumnos = new javax.swing.JComboBox<>();
+        jCAlumnos = new javax.swing.JComboBox<Alumno>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTabla = new javax.swing.JTable();
         jBGuardar = new javax.swing.JButton();
@@ -74,6 +75,11 @@ public class CargaNotas extends javax.swing.JInternalFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablaMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTabla);
@@ -136,44 +142,79 @@ public class CargaNotas extends javax.swing.JInternalFrame {
         initComponents();
         armarCabeceraTabla();
         cargarCombo();
-        limpiarTabla();
-        
-        
+        Principal.limpiarTabla(jTabla, modeloTabla);
+        jBGuardar.setEnabled(false);
     }
      
-       private DefaultTableModel modeloTabla=new DefaultTableModel();//{
-     /* public boolean isCellEditable(int r, int c){
-          return false;
-      }  
-    };*/
+    private DefaultTableModel modeloTabla = new DefaultTableModel() {
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            // SOLO PERMITE EDITAR LA ÚLTIMA COLUMNA
+            return column == getColumnCount() - 1;
+        }
+    };
+
     
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
     this.dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
 
     private void jCAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCAlumnosActionPerformed
-        limpiarTabla();
-
+        Principal.limpiarTabla(jTabla, modeloTabla);
+        if(jCAlumnos.getSelectedIndex() != -1){
+            jBGuardar.setEnabled(true);
+        }
         Alumno alumno = (Alumno) jCAlumnos.getSelectedItem();
-        int idalu = alumno.getIdAlumno();
+        int idAlu = alumno.getIdAlumno();
         InscripcionData inscriData = new InscripcionData();
-        List<Inscripcion> inscripciones = inscriData.obtenerInscripcionesPorAlumno(idalu);
-        for (Materia materia : inscriData.obtenerMateriasCursadas(idalu)) {
+        List<Inscripcion> inscripciones = inscriData.obtenerInscripcionesPorAlumno(idAlu);
+        for (Materia materia : inscriData.obtenerMateriasCursadas(idAlu)) {
             for (Inscripcion inscri : inscripciones) {
                 if (materia.getIdMateria() == inscri.getMateria().getIdMateria()) {
                     modeloTabla.addRow(new Object[]{materia.getIdMateria(), materia.getNombre(),
                         inscri.getNota()});
                 }
             }
-
         }
-
-       
     }//GEN-LAST:event_jCAlumnosActionPerformed
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-
+        // CONTROLAR ClassCastException
+        InscripcionData inscriData = new InscripcionData();
+        int fila = jTabla.getSelectedRow();
+        int nota = 0;
+        try {
+            nota = (int) jTabla.getValueAt(fila, 2);
+        } catch (ClassCastException ex) {
+            nota = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+        } finally {
+            if (fila != -1) {
+                if (jTabla.getCellEditor() != null) {    // SE OBTIENE EL VALOR EDITADO Y SE DETIENE LA EDICIÓN
+                    jTabla.getCellEditor().stopCellEditing();
+                    Alumno alumno = (Alumno) jCAlumnos.getSelectedItem();
+                    int idAlu = alumno.getIdAlumno();
+                    int idMate = (int) jTabla.getValueAt(fila, 0);
+                    int notaActualizada = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+                    if (nota != notaActualizada) {
+                        inscriData.actualizarNota(idAlu, idMate, notaActualizada);
+                        jBGuardar.setEnabled(false);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "No modifico la nota");
+                        return;
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione una fila de la tabla");
+                return;
+            }
+        }
     }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jTablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablaMouseClicked
+        if(jTabla.getSelectedRow() != -1){
+            jBGuardar.setEnabled(true);
+        }
+    }//GEN-LAST:event_jTablaMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBGuardar;
@@ -184,30 +225,20 @@ public class CargaNotas extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTabla;
     // End of variables declaration//GEN-END:variables
-  
-// MÉTODO PARA LIMPIAR LA TABLA 
-    private void limpiarTabla() {
-        int f = jTabla.getRowCount() - 1;
-        for (; f >= 0; f--) {
-            modeloTabla.removeRow(f);
-        }
-    }
+    
     // MÉTODO PARA ARMAR LA CABECERA DE LA TABLA
-
     private void armarCabeceraTabla() {
         modeloTabla.addColumn("Código");
         modeloTabla.addColumn("Nombre Materia");
         modeloTabla.addColumn("Nota");
         jTabla.setModel(modeloTabla);
     }
+    
     // MÉTODO PARA CARGAR LOS ALUMNOS AL JRADIOBUTTON
-
     private void cargarCombo() {
-
         AlumnoData ad = new AlumnoData();
         for (Alumno alumno : ad.listarAlumnos()) {
             jCAlumnos.addItem(alumno);
         }
     }
-
 }

@@ -19,7 +19,7 @@ public class AlumnosXMateria extends javax.swing.JInternalFrame {
         initComponents();
         armarCabeceraTabla();
         cargarCombo();
-        limpiarTabla();
+        Principal.limpiarTabla(jTabla, modeloTabla);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -138,12 +138,11 @@ public class AlumnosXMateria extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
 
     private void jCMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCMateriasActionPerformed
-        limpiarTabla();
-
+        Principal.limpiarTabla(jTabla, modeloTabla);
         Materia materia = (Materia) jCMaterias.getSelectedItem();
         int id = materia.getIdMateria();
         InscripcionData inscriData = new InscripcionData();
@@ -151,7 +150,6 @@ public class AlumnosXMateria extends javax.swing.JInternalFrame {
             modeloTabla.addRow(new Object[]{alumno.getIdAlumno(), alumno.getDni(), alumno.getApellido(),
                 alumno.getNombre()});
         }
-
     }//GEN-LAST:event_jCMateriasActionPerformed
 
 
@@ -165,22 +163,15 @@ public class AlumnosXMateria extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTabla;
     // End of variables declaration//GEN-END:variables
  
-// MÉTODO PARA CARGAR LOS ALUMNOS AL JRADIOBUTTON
-    private void cargarCombo(){
-        
+    // MÉTODO PARA CARGAR LOS ALUMNOS AL JRADIOBUTTON
+    private void cargarCombo() {
         MateriaData md = new MateriaData();
         for (Materia materia : md.listarMaterias()) {
             jCMaterias.addItem(materia);
         }
     }
-   // MÉTODO PARA LIMPIAR LA TABLA 
-    private void limpiarTabla(){
-        int f = jTabla.getRowCount() - 1;
-        for (; f >= 0; f--) { //se declara el ; porque arriba esta declarada ya la variable
-            modeloTabla.removeRow(f);
-        }
-    }
-       // MÉTODO PARA ARMAR LA CABECERA DE LA TABLA
+    
+    // MÉTODO PARA ARMAR LA CABECERA DE LA TABLA
     private void armarCabeceraTabla(){
         modeloTabla.addColumn("ID");
         modeloTabla.addColumn("DNI");

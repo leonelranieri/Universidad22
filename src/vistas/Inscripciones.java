@@ -25,7 +25,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         initComponents();
         armarCabeceraTabla();
         cargarCombo();
-        limpiarTabla();
+        Principal.limpiarTabla(jTtabla, modeloTabla);
         jCAlumnos.setEnabled(false);
     }
     
@@ -199,7 +199,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                 int idMateria = (int) jTtabla.getValueAt(filaSelecionada, 0);
                 int idAlumno = id;
                 idata.borrarInscripcionMateriaAlumno(idAlumno, idMateria);
-                limpiarTabla();
+                Principal.limpiarTabla(jTtabla, modeloTabla);
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
@@ -207,7 +207,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBAnularActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
-     this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jBsalirActionPerformed
 
     private void jRInscriptasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRInscriptasActionPerformed
@@ -273,7 +273,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
                     InscripcionData id=new InscripcionData();
                     Inscripcion nuevaInsc=new Inscripcion(aluSeleccionado, materiaSeleccionada, nota);
                     id.guardarInscripcion(nuevaInsc);
-                    limpiarTabla();
+                    Principal.limpiarTabla(jTtabla, modeloTabla);
                 }
             }catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(this, "Seleccione una materia");
@@ -314,17 +314,9 @@ public class Inscripciones extends javax.swing.JInternalFrame {
         jTtabla.setModel(modeloTabla);
     }
     
-    // MÉTODO PARA LIMPIAR LA TABLA 
-    private void limpiarTabla(){
-        int f = jTtabla.getRowCount() - 1;
-        for (; f >= 0; f--) {
-            modeloTabla.removeRow(f);
-        }
-    }
-    
     // MÉTODO PARA LISTAR MATERIAS INSCRIPTAS POR ALUMNO
     private void listarMateriasInscriptas(int idAlumno) {
-        limpiarTabla();
+        Principal.limpiarTabla(jTtabla, modeloTabla);
         InscripcionData id = new InscripcionData();
 
         for (Materia mat : id.obtenerMateriasCursadas(idAlumno)) {
@@ -334,7 +326,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
 
     // MÉTODO PARA LISTAR MATERIAS NO INSCRIPTAS POR ALUMNO
     private void listarMateriasNoinscriptas(int idAlumno) {
-        limpiarTabla();
+        Principal.limpiarTabla(jTtabla, modeloTabla);
         InscripcionData id = new InscripcionData();
 
         for (Materia mat : id.obtenerMateriasNoCursadas(idAlumno)) {
@@ -345,7 +337,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     private int prepararAmbienteInsc(){
         inscriptas=true;   //DAMOS VALOR A LAS VARIABLES PARA CONTROLAR EL FLUJO DE EJECUCIÓN
         noInscriptas=false;
-        limpiarTabla();
+        Principal.limpiarTabla(jTtabla, modeloTabla);
         jCAlumnos.setEnabled(true);   //ACTIVAMOS EL JCOMBOBOX QUE INICIA DESACTIVADO EN EL CONSTRUCTOR
         jRNoInscriptas.setSelected(false);  //DESACTIVAMOS EL JRADIOBUTTON 'MATERIAS NO INSCRIPTAS'
         return jCAlumnos.getSelectedIndex();
@@ -354,7 +346,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     private int prepararAmbienteNoInsc(){
         inscriptas = false;
         noInscriptas = true;
-        limpiarTabla();
+        Principal.limpiarTabla(jTtabla, modeloTabla);
         jCAlumnos.setEnabled(true);
         jRInscriptas.setSelected(false);
         return jCAlumnos.getSelectedIndex();
