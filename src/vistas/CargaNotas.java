@@ -189,27 +189,41 @@ public class CargaNotas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jCAlumnosActionPerformed
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-        // CONTROLAR ClassCastException
         InscripcionData inscriData = new InscripcionData();
-        int fila = jTabla.getSelectedRow();
-        int nota = 0;
+        int fila = jTabla.getSelectedRow(); 
+        int nota = -1;
+        int notaActualizada = -1;
         try {
             nota = (int) jTabla.getValueAt(fila, 2);
         } catch (ClassCastException ex) {
-            nota = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
-        } finally {
+            try {  // VERIFICAR INGRESO DE VALORES NUMÉRICOS
+                nota = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+            }catch(NumberFormatException nfe){
+                return;
+            }
+        }finally {
             if (fila != -1) {
                 if (jTabla.getCellEditor() != null) {    // SE OBTIENE EL VALOR EDITADO Y SE DETIENE LA EDICIÓN
                     jTabla.getCellEditor().stopCellEditing();
                     Alumno alumno = (Alumno) jCAlumnos.getSelectedItem();
                     int idAlu = alumno.getIdAlumno();
                     int idMate = (int) jTabla.getValueAt(fila, 0);
-                    int notaActualizada = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+                    try{
+                        notaActualizada = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+                    }catch (NumberFormatException nfe){
+                        JOptionPane.showMessageDialog(this, "Debe ingresar valores numéricos");
+                        return;
+                    }
+                    //int notaActualizada = Integer.parseInt((String) jTabla.getValueAt(fila, 2));
+                    if (notaActualizada < 0 || notaActualizada > 10){
+                        JOptionPane.showMessageDialog(this, "Valor de nota inválido");
+                        return;
+                    }
                     if (nota != notaActualizada) {
                         inscriData.actualizarNota(idAlu, idMate, notaActualizada);
                         jBGuardar.setEnabled(false);
                     } else {
-                        JOptionPane.showMessageDialog(this, "No modifico la nota");
+                        JOptionPane.showMessageDialog(this, "Para modificar la nota cambie el valor");
                         return;
                     }
                 }
