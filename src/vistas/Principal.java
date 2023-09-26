@@ -13,152 +13,145 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-	setIconImage(getIconImage());	  
+	setIconImage(getIconImage());
     }
 
     @SuppressWarnings("unchecked")
-   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-   private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-      jLabel1 = new javax.swing.JLabel();
-      jDescritorio = new javax.swing.JDesktopPane();
-      jMenuBar1 = new javax.swing.JMenuBar();
-      jMalumno = new javax.swing.JMenu();
-      jMenuItem1 = new javax.swing.JMenuItem();
-      jMmateria = new javax.swing.JMenu();
-      jMenuItem2 = new javax.swing.JMenuItem();
-      jMadministracion = new javax.swing.JMenu();
-      jMenuItem3 = new javax.swing.JMenuItem();
-      jMenuItem4 = new javax.swing.JMenuItem();
-      jMconsultas = new javax.swing.JMenu();
-      jMenuItem5 = new javax.swing.JMenuItem();
-      jMsalir = new javax.swing.JMenu();
-      jMenuItem6 = new javax.swing.JMenuItem();
+        jLabel1 = new javax.swing.JLabel();
+        jDescritorio = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMalumno = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMmateria = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMadministracion = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMconsultas = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMsalir = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
 
-      jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/ulp.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/ulp.png"))); // NOI18N
 
-      setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-      setIconImages(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImages(null);
+        setPreferredSize(new java.awt.Dimension(1042, 801));
 
-      javax.swing.GroupLayout jDescritorioLayout = new javax.swing.GroupLayout(jDescritorio);
-      jDescritorio.setLayout(jDescritorioLayout);
-      jDescritorioLayout.setHorizontalGroup(
-         jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 1042, Short.MAX_VALUE)
-      );
-      jDescritorioLayout.setVerticalGroup(
-         jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGap(0, 740, Short.MAX_VALUE)
-      );
+        jDescritorio.setBackground(new java.awt.Color(240, 240, 240));
+        jDescritorio.setPreferredSize(new java.awt.Dimension(1042, 801));
 
-      jMalumno.setText("Alumno");
-      jMalumno.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMalumnoActionPerformed(evt);
-         }
-      });
+        javax.swing.GroupLayout jDescritorioLayout = new javax.swing.GroupLayout(jDescritorio);
+        jDescritorio.setLayout(jDescritorioLayout);
+        jDescritorioLayout.setHorizontalGroup(
+            jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1042, Short.MAX_VALUE)
+        );
+        jDescritorioLayout.setVerticalGroup(
+            jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 801, Short.MAX_VALUE)
+        );
 
-      jMenuItem1.setText("Formulario de alumno");
-      jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem1ActionPerformed(evt);
-         }
-      });
-      jMalumno.add(jMenuItem1);
+        jMalumno.setText("Alumno");
 
-      jMenuBar1.add(jMalumno);
+        jMenuItem1.setText("Formulario de alumno");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMalumno.add(jMenuItem1);
 
-      jMmateria.setText("Materia");
-      jMmateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuBar1.add(jMalumno);
 
-      jMenuItem2.setText("Formulario de materia");
-      jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem2ActionPerformed(evt);
-         }
-      });
-      jMmateria.add(jMenuItem2);
+        jMmateria.setText("Materia");
+        jMmateria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-      jMenuBar1.add(jMmateria);
+        jMenuItem2.setText("Formulario de materia");
+        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMmateria.add(jMenuItem2);
 
-      jMadministracion.setText("Administración");
-      jMadministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuBar1.add(jMmateria);
 
-      jMenuItem3.setText("Manejo de inscripciones");
-      jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem3ActionPerformed(evt);
-         }
-      });
-      jMadministracion.add(jMenuItem3);
+        jMadministracion.setText("Administración");
+        jMadministracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-      jMenuItem4.setText("Manipulacion de notas");
-      jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem4ActionPerformed(evt);
-         }
-      });
-      jMadministracion.add(jMenuItem4);
+        jMenuItem3.setText("Manejo de inscripciones");
+        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMadministracion.add(jMenuItem3);
 
-      jMenuBar1.add(jMadministracion);
+        jMenuItem4.setText("Manipulacion de notas");
+        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMadministracion.add(jMenuItem4);
 
-      jMconsultas.setText("Consultas");
-      jMconsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuBar1.add(jMadministracion);
 
-      jMenuItem5.setText("Alumnos por materia");
-      jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem5ActionPerformed(evt);
-         }
-      });
-      jMconsultas.add(jMenuItem5);
+        jMconsultas.setText("Consultas");
+        jMconsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-      jMenuBar1.add(jMconsultas);
+        jMenuItem5.setText("Alumnos por materia");
+        jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMconsultas.add(jMenuItem5);
 
-      jMsalir.setText("Salir");
-      jMsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMsalir.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMsalirActionPerformed(evt);
-         }
-      });
+        jMenuBar1.add(jMconsultas);
 
-      jMenuItem6.setText("Salir");
-      jMenuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-      jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jMenuItem6ActionPerformed(evt);
-         }
-      });
-      jMsalir.add(jMenuItem6);
+        jMsalir.setText("Salir");
+        jMsalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-      jMenuBar1.add(jMsalir);
+        jMenuItem6.setText("Salir");
+        jMenuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMsalir.add(jMenuItem6);
 
-      setJMenuBar(jMenuBar1);
+        jMenuBar1.add(jMsalir);
 
-      javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-      getContentPane().setLayout(layout);
-      layout.setHorizontalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(layout.createSequentialGroup()
-            .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(0, 0, Short.MAX_VALUE))
-      );
-      layout.setVerticalGroup(
-         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-         .addGroup(layout.createSequentialGroup()
-            .addContainerGap()
-            .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(29, Short.MAX_VALUE))
-      );
+        setJMenuBar(jMenuBar1);
 
-      pack();
-   }// </editor-fold>//GEN-END:initComponents
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 286, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 295, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         jDescritorio.removeAll();
@@ -210,17 +203,9 @@ public class Principal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMsalirActionPerformed
-
-    }//GEN-LAST:event_jMsalirActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-  
+        this.dispose();;
     }//GEN-LAST:event_jMenuItem6ActionPerformed
-
-    private void jMalumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMalumnoActionPerformed
-        
-    }//GEN-LAST:event_jMalumnoActionPerformed
 
    
     public static void main(String args[]) {
@@ -255,22 +240,22 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
-   // Variables declaration - do not modify//GEN-BEGIN:variables
-   private javax.swing.JDesktopPane jDescritorio;
-   private javax.swing.JLabel jLabel1;
-   private javax.swing.JMenu jMadministracion;
-   private javax.swing.JMenu jMalumno;
-   private javax.swing.JMenu jMconsultas;
-   private javax.swing.JMenuBar jMenuBar1;
-   private javax.swing.JMenuItem jMenuItem1;
-   private javax.swing.JMenuItem jMenuItem2;
-   private javax.swing.JMenuItem jMenuItem3;
-   private javax.swing.JMenuItem jMenuItem4;
-   private javax.swing.JMenuItem jMenuItem5;
-   private javax.swing.JMenuItem jMenuItem6;
-   private javax.swing.JMenu jMmateria;
-   private javax.swing.JMenu jMsalir;
-   // End of variables declaration//GEN-END:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane jDescritorio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMadministracion;
+    private javax.swing.JMenu jMalumno;
+    private javax.swing.JMenu jMconsultas;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenu jMmateria;
+    private javax.swing.JMenu jMsalir;
+    // End of variables declaration//GEN-END:variables
 @Override 
 public Image getIconImage(){
 	Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("iconos/ulp1.png"));
