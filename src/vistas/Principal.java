@@ -3,17 +3,28 @@ package vistas;
 import java.awt.Image;
 import java.awt.Toolkit;
 import Vistas.Alumnos;
+import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.imageio.ImageIO;
+import javax.swing.JDesktopPane;
 
 public class Principal extends javax.swing.JFrame {
-    
+private JDesktopPane escritorio;
+    private BufferedImage img;
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-	setIconImage(getIconImage());	  
+	setIconImage(getIconImage());
+		 Container escritorio = null;
+this.setContentPane(escritorio);	
+	escritorio es = new escritorio();
+	
+	
     }
 
     @SuppressWarnings("unchecked")
@@ -276,11 +287,27 @@ public Image getIconImage(){
 	Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("iconos/ulp1.png"));
 return retValue;
 }
+public void painComponent(Graphics g){
+	super.printComponents(g);
+	g.drawImage(img, 50, 50, 268, 92, null);
+}
     public static void limpiarTabla(JTable jTabla, DefaultTableModel modeloTabla) {
         int f = jTabla.getRowCount() - 1;
         for (; f >= 0; f--) {
             modeloTabla.removeRow(f);
         }
     }
+
+	private static class escritorio {
+
+		public escritorio() {
+				 try {
+			 img = ImageIO.read(getClass().getResourceAsStream("/iconos/ulp.png"));
+		 } catch (Exception ex) {
+			 ex.printStackTrace();
+		 }
+			
+		}
+	}
 
 }
