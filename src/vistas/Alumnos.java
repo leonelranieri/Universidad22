@@ -122,6 +122,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
 
       jBeliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar_24.png"))); // NOI18N
       jBeliminar.setText("Eliminar");
+      jBeliminar.setContentAreaFilled(false);
       jBeliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
       jBeliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
       jBeliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar_24.png"))); // NOI18N
@@ -255,7 +256,7 @@ public class Alumnos extends javax.swing.JInternalFrame {
                .addComponent(jBeliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addComponent(jBguardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                .addComponent(jBsalir))
-            .addContainerGap(32, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
       );
 
       pack();
