@@ -123,8 +123,10 @@ public class Alumnos extends javax.swing.JInternalFrame {
 
         jBeliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar_24.png"))); // NOI18N
         jBeliminar.setText("Eliminar");
+        jBeliminar.setContentAreaFilled(false);
         jBeliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBeliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBeliminar.setInheritsPopupMenu(true);
         jBeliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar_24.png"))); // NOI18N
         jBeliminar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar_32.png"))); // NOI18N
         jBeliminar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);

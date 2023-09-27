@@ -42,6 +42,8 @@ public class Principal extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1042, 801));
 
         jDescritorio.setBackground(new java.awt.Color(240, 240, 240));
+        jDescritorio.setAlignmentX(1.0F);
+        jDescritorio.setAlignmentY(1.0F);
         jDescritorio.setPreferredSize(new java.awt.Dimension(1042, 801));
 
         javax.swing.GroupLayout jDescritorioLayout = new javax.swing.GroupLayout(jDescritorio);
@@ -52,7 +54,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jDescritorioLayout.setVerticalGroup(
             jDescritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 801, Short.MAX_VALUE)
+            .addGap(0, 751, Short.MAX_VALUE)
         );
 
         jMalumno.setText("Alumno");
@@ -146,8 +148,9 @@ public class Principal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 295, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jDescritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(345, Short.MAX_VALUE))
         );
 
         pack();
@@ -204,7 +207,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        this.dispose();;
+        this.dispose();
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
    
